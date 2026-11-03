@@ -15,20 +15,26 @@
     <main>
         <section class="convert-section mt-5 d-flex flex-column align-items-center">
             <h1>COIN Converter</h1>
+
+            <!-- Egyptian pound input -->
             <div class="input-group w-75 mb-4">
                 <div class="input-group-prepend">
-                    <span class="input-group-text" id="">EGYPT</span>
+                    <span class="input-group-text">EGYPT</span>
                 </div>
                 <input type="number" class="form-control" id="eg-coin">
             </div>
 
+            <!-- Dollar input -->
             <div class="input-group w-75">
                 <div class="input-group-prepend">
-                    <span class="input-group-text" id="">DOLLAR</span>
+                    <span class="input-group-text">DOLLAR</span>
                 </div>
                 <input type="number" class="form-control" id="dol-coin">
             </div>
+
+            <!-- Validation message -->
             <h3 class="text-danger" id="alertP"></h3>
+
             <button id="convert" class="mt-4 btn btn-success">Convert</button>
         </section>
     </main>
