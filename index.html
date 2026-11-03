@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <main>
+        <section class="convert-section mt-5 d-flex flex-column align-items-center">
+            <h1>COIN Converter</h1>
+            <div class="input-group w-75 mb-4">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="">EGYPT</span>
+                </div>
+                <input type="number" class="form-control" id="eg-coin">
+            </div>
+
+            <div class="input-group w-75">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="">DOLLAR</span>
+                </div>
+                <input type="number" class="form-control" id="dol-coin">
+            </div>
+            <h3 class="text-danger" id="alertP"></h3>
+            <button id="convert" class="mt-4 btn btn-success">Convert</button>
+        </section>
+    </main>
+
+    <!-- Bootstrap scripts -->
+    <script src="js/jquery.slim.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Main logic -->
+    <script src="js/logic.js"></script>
+    <script>
+        document.getElementById("convert").addEventListener("click", ev => {
+            let egInput = document.getElementById("eg-coin")
+            let dolInput = document.getElementById("dol-coin")
+
+            let eg = document.getElementById("eg-coin").value
+            let dol = document.getElementById("dol-coin").value
+            let alertP = document.getElementById("alertP")
+            if (eg === "" && dol === "") {
+                alertP.innerHTML = "Enter number please"
+            }
+            else if (eg !== "" && dol !== "") {
+                alertP.innerHTML = "fill one input please"
+            }
+            else if (eg !== "") {
+                dolInput.value = Number(eg) / 55.3
+                alertP.innerHTML = ""
+            }
+            else if (dol !== "") {
+                egInput.value = Number(dol) * 55.3
+                alertP.innerHTML = ""
+            }
+        })
+    </script>
+</body>
+
+</html>
